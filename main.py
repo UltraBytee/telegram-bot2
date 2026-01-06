@@ -9,14 +9,10 @@ from collections import Counter
 
 # --- Sozlamalar ---
 import os
-API_ID = 25235185
-API_HASH = '8aba19b77a17a1fec42ee90a45cb9043'
-BOT_TOKEN = '8184358307:AAGF227km0tUVPKMM-OGnCW_KR7Z4OzoXkE'
 
-
-# API_ID = int(os.getenv("API_ID"))
-# API_HASH = os.getenv("API_HASH")
-# BOT_TOKEN = os.getenv("BOT_TOKEN")
+API_ID = int(os.getenv("API_ID"))
+API_HASH = os.getenv("API_HASH")
+BOT_TOKEN = os.getenv("BOT_TOKEN")
 
 # --- Telethon va Aiogram obyektlari ---
 telethon_client = TelegramClient('session_name', API_ID, API_HASH)
@@ -249,4 +245,5 @@ async def get_group(message: types.Message, state: FSMContext):
 
 if __name__ == '__main__':
     from aiogram import executor
+
     executor.start_polling(dp, skip_updates=True)
